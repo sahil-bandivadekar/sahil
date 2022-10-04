@@ -1,0 +1,250 @@
+ASSIGNMENT 2
+
+1. Write a shell script to calculate simple interest. 
+
+#!/bin/bash
+echo "Simple intrest program"
+echo "enter principal amount"
+read p
+echo "enter rate of intrest"
+read r
+echo "enter time"
+read t
+si=$((($p*$r*$t)/100))
+echo "simple intrest is $si"
+
+2. Write a shell script to calculate salary from given basic. 
+Salary = basic + dp + da +hra +ma –pf 
+basic – to be taken as input 
+dp - 50 % of basic 
+da - 35 % of (basic + dp) 
+hra - 8 % of (basic + dp) 
+ma - 3 % of (basic + dp) 
+pf - 10% of (basic + dp
+ 
+#!/bin/bash
+echo "Enter base salary"
+read bs
+echo "Your basic salary is $bs"
+dp=$((bs*50/100))
+echo "dp is $dp"
+z=$(($bs+$dp))
+echo "basic + dp is $z"
+da=$(($z*35/100))
+echo "da is $da"
+hra=$(($z*8/100))
+echo "hra is $hra"
+ma=$(($z*3/100))
+echo "ma is $ma"
+pf=$(($z*10/100))
+echo "pf is $pf"
+salary=$(($bs+$dp+$da+$hra+$ma-$pf))
+echo "salary is $salary"
+
+3. Write a shell script to calculate the average of a 3 number. 
+
+#!/bin/bash
+echo "enter 3 numbers"
+read a
+read b
+read c
+sum=$(($a+$b+$c))
+avg=$(((a+b+c)/$sum))
+echo "average of 3 numbers is $avg"
+
+4. Write a shell script to display sum , subtraction, multiplication & division
+
+#!/bin/bash
+echo "enter two numbers"
+read a
+read b
+echo "the entered nos are $a and $b"
+sum=$(($a+$b))
+echo "sum is $sum"
+sub=$(($a-$b))
+echo "sub is $sub"
+mul=$(($a*$b))
+echo "mul is $mul"
+div=$((a/b))
+echo "div is $div"
+
+5. Accept 3 subject marks from student & calculate average
+Display result as follows
+Greater than 50% - first class
+40 – 50 – second class
+Less than 50 - Fail 
+
+#!/bin/bash
+echo "Enter marks of English Hindi IT out of 100"
+read e
+read h
+read i
+echo "english is $e and hindi is $h and IT is $i"
+sum=$(($e+$h+$i))
+echo "total marks are $sum"
+per=$(($sum*100/300))
+echo "percentage is $per"
+if [ $per -gt 50 ]
+then
+echo "first class"
+elif [ $per -lt 50 ] && [ $per -gt 40 ]
+then
+echo "2nd class"
+else
+echo "fail"
+fi
+
+ASSIGNMENT 4
+
+1. Write a Script to display the first 10 natural numbers. 
+Expected Output :
+1 2 3 4 5 6 7 8 9 10
+
+#!/bin/bash
+sum=0
+for ((i=1;i<=10;i++))
+do
+echo "$i"
+done
+
+
+2. Write a script to find the sum of first 10 natural numbers. 
+Expected Output :
+The first 10 natural number is :
+1 2 3 4 5 6 7 8 9 10
+The Sum is : 55
+
+#!/bin/bash
+sum=0
+for ((i=1;i<=10;i++))
+do
+echo "$i"
+sum=$((i+sum))
+done
+echo "sum is" $sum
+
+
+3. Write a script to display n terms of natural number and their sum.
+Test Data : 7
+Expected Output :
+The first 7 natural number is :
+1 2 3 4 5 6 7
+The Sum of Natural Number upto 7 terms : 28
+
+#!/bin/bash
+echo "enter a number"
+read n
+for ((i=1;i<=n;i++))
+do
+echo "$i"
+sum=$((sum+$i))
+done
+echo "sum is "$sum
+
+
+4. Write a script to read 10 numbers from keyboard and find their sum and average. 
+Test Data :
+Input the 10 numbers :
+Number-1 :2
+...
+Number-10 :2
+Expected Output :
+The sum of 10 no is : 55
+The Average is : 5.500000
+
+#!/bin/bash
+echo "enter values of n"
+read n
+sum=0
+for ((i=1;i<=n;i++))
+do
+read b
+sum=$((sum+b))
+done
+echo "sum is $sum"
+avg=$(($sum/$n))
+echo " average is $avg"
+
+
+5. Write a script to display the cube of the number upto given an integer. 
+Test Data :
+Input number of terms : 5
+Expected Output :
+Number is : 1 and cube of the 1 is :1
+Number is : 2 and cube of the 2 is :8
+Number is : 3 and cube of the 3 is :27
+Number is : 4 and cube of the 4 is :64
+Number is : 5 and cube of the 5 is :125
+
+#!/bin/bash
+echo "enter values of n"
+read n
+for ((i=1;i<=n;i++))
+do
+read n
+cube=$(($i*$i*$i))
+echo " cube is $cube"
+done
+
+
+6. Write a script to display the multiplication table of a given integer. 
+Test Data :
+Input the number (Table to be calculated) : 15
+Expected Output :
+15 X 1 = 15
+...
+...
+15 X 10 = 150
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1. Script to find maximum numbers between two numbers
+
+#!/bin/bash
+echo "enter two numbers"
+read a
+read b
+echo "The two numbers are $a and $b"
+if [ $a -gt $b ]
+then
+echo "$a is greater"
+else
+echo "$b is greater"
+fi
+
+
+Script to find maximum numbers between three numbers
+
+#!/bin/bash
+echo "enter 3 nos"
+read a
+read b
+read c
+echo "entered three nos are $a $b and $c"
+if [ $a -gt $b ] && [ $a -gt $c ]
+then
+echo "$a is max"
+elif [ $b -gt $a ] && [ $b -gt $c ]
+then
+echo "$b is max"
+else
+echo "$c is max"
+fi
+
+
+
+
+
+
